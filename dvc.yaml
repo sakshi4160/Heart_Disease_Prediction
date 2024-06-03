@@ -1,0 +1,16 @@
+stages:
+  training:
+    cmd: python src/Heart_Disease_Prediction/pipeline/Training_pipeline.py
+    deps:
+      - src/Heart_Disease_Prediction/pipeline/training_pipeline.py
+      - src/Heart_Disease_Prediction/components/Data_ingestion.py
+      - src/Heart_Disease_Prediction/components/Data_transformation.py
+      - src/Heart_Disease_Prediction/components/Model_trainer.py
+      - src/Heart_Disease_Prediction/components/Model_evaluation.py
+
+    outs:
+      - Artifacts/raw_data.csv
+      - Artifacts/test_data.csv
+      - Artifacts/train_data.csv
+      - Artifacts/Preprocessor.pkl
+      - Artifacts/Model.pkl
